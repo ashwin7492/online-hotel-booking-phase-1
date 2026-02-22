@@ -1,0 +1,86 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content{
+    flex: 1 0 auto;
+}
+
+.navbar {
+    height: 5rem;
+}
+
+.hgi-flying-human {
+    height: 2rem !important;
+}
+
+/* footers */
+.sticky-footer{
+   height: 8rem; 
+   flex-shrink: 0;
+}
+
+.f-info-terms a {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    gap: 2rem;
+}
+
+.f-info-terms a:hover{
+    text-decoration: underline;
+}
+
+.f-info-socials i {
+    width: 3rem;
+    gap: 2rem;
+}
+
+.f-info-socials, .f-info-brand, .f-info-terms {
+    /* width: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+
+/* cards */
+
+.index-card{
+    border: none !important;
+    transition: transform 0.25 ease;
+    margin-top: 10px;
+    border-radius: 1.5rem !important;
+}
+
+.index-card:hover{
+    transform: scale(1.03);
+}
+
+.card-img-top {
+    height: 300px;
+    border-radius: 1.5rem;
+}
+
+.card-click {
+    text-decoration: none;
+}
+
+.card-img-overlay{
+    opacity: 0;
+    background-color: rgba(0,0,0,0.10);
+}
+
+.card-img-overlay:hover{
+    opacity: 1;
+    border-radius: 1.5rem !important;
+}
+
+/* show */ 
+.show{
+    margin: 20px auto;
+}
+

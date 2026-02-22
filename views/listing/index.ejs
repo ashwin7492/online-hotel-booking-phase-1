@@ -1,0 +1,60 @@
+<% layout("/layouts/boilerplate") %>
+
+    <body>
+        <!-- <form method="get" action="/listings/new"><button type="submit">Create New Listing</button></form> -->
+        <div class="row">
+            <% for (let list of listings) { %>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <a class="card-click" href="/listings/<%= list._id %>">
+                        <div class="card index-card">
+                            <img src="<%= list.image %>" class="card-img-top" alt="listing image"><div class="card-img-overlay"></div>
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <%= list.title %>
+                                </h5>
+                                <p class="card-text">
+                                    &#8377 <%= list.price.toLocaleString("en-IN") %>
+                                </p>
+                                <p class="card-text">
+                                    <%= list.location %>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            <% } %>
+        </div>
+
+    </body>
+
+
+    <!-- <% layout("/layouts/boilerplate") %>
+
+<div class="container mt-4">
+  <div class="row g-4">
+    <% for (let list of listings) { %>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <img 
+            src="<%= list.image %>" 
+            class="card-img-top"
+            alt="listing image"
+            style="height: 180px; object-fit: cover;"
+          >
+
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title"><%= list.title %></h5>
+
+            <p class="card-text mb-1">
+              ₹ <%= list.price %>
+            </p>
+
+            <p class="card-text text-muted mt-auto">
+              <%= list.location %>
+            </p>
+          </div>
+        </div>
+      </div>
+    <% } %>
+  </div>
+</div> -->
