@@ -1,5 +1,5 @@
 # This is online booking website similer to Air BNB
-This web application is created using .ejs templates, layouts, boilerplate and perform crud operations.
+*This web application is created using .ejs templates, layouts, boilerplate and perform crud operations.
 In phase 1 it allows a owner to Add, View, Edit and Delete listings.
 Errors are handled throught the phase 1 and Schema validation is done by joi.
 This is the start of a major project with all industry ready credentials.
