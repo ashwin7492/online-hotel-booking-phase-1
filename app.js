@@ -100,24 +100,9 @@ app.delete("/listings/:id", wrapAsync(async (req, res) => {
 }));
 
 // Test route
-// app.get("/test", async (req,res) => {
-//     let sampleListings = new Listing({
-//         title: "Cozy Cottage",
-//         description: "A cozy cottage in the countryside.",
-//         price: 120,
-//         location: "Countryside",
-//         country: "USA"
-//     });
+// you can use a test route for testing different type of errors.
 
-//     await sampleListings.save();
-//     console.log("Sample listing saved");
-//     res.send("Test listing created and saved to database");
-// });
-
-// app.use((err, req, res, next) => {
-//     res.status(err.status || 500).send(err.message || "something went Wrong!!");
-// });
-
+// 404! Error
 app.use((req, res, next) => {
     next(new ExpressError(404, "Page not Found!!"));
 });
@@ -130,4 +115,5 @@ app.use((err, req, res, next) => {
 
 app.listen(3000, () => {
     console.log("Server is listening to port 3000");
+
 })
