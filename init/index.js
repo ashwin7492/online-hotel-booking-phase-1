@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 const initData = require("./data.js");
 const Listing = require("../models/listing.js");
 
-let url = "mongodb://127.0.0.1:27017/AirBNB-clone";
+let url =
+  "mongodb+srv://ashwin7492_db_user:luzPu0vcorZSu7ew@cluster0.raljodu.mongodb.net/?appName=Cluster0";
 
 main()
   .then(() => {

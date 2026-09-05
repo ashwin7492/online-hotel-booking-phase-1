@@ -64,7 +64,7 @@ const geocodeLocation = async (req, res, next) => {
 
     if (!response.data.results || response.data.results.length === 0) {
       req.flash("error", `Location "${location}" could not be found.`);
-      return res.redirect("back");
+      return res.redirect("/listings/new");
     }
 
     const result = response.data.results[0];
@@ -81,7 +81,7 @@ const geocodeLocation = async (req, res, next) => {
     console.log("=====================================");
 
     req.flash("error", "Unable to find location.");
-    return res.redirect("back");
+    return res.redirect("/listings/new");
   }
 };
 module.exports = geocodeLocation;

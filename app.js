@@ -14,6 +14,7 @@ const reviewsRoutes = require("./routes/review.js");
 const userRoutes = require("./routes/user.js");
 
 const session = require("express-session");
+const { MongoStore } = require("connect-mongo");
 const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
@@ -29,7 +30,8 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 
-let url = "mongodb://127.0.0.1:27017/AirBNB-clone";
+// let url = "mongodb://127.0.0.1:27017/AirBNB-clone";
+const dbUrl = process.env.ATLAS_DBURL;
 
 main()
   .then(() => {
@@ -39,10 +41,19 @@ main()
     console.log("Error connecting to MongoDB:", err);
   });
 async function main() {
-  await mongoose.connect(url);
+  await mongoose.connect(dbUrl);
 }
 
+const store = MongoStore.create({
+  mongoUrl: dbUrl,
+  crypto: {
+    secret: "supersecret",
+  },
+  touchAfter: 24 * 3600,
+});
+
 const sessionOptions = {
+  store,
   secret: "thisisasecret",
   resave: false,
   saveUninitialized: true,
